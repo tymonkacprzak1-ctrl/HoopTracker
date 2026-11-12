@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>HoopTracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0c;
+      --bg-elevated: #141418;
+      --bg-card: #1c1c22;
+      --bg-card-hover: #25252d;
+      --silver: #c0c0c8;
+      --silver-light: #e8e8f0;
+      --silver-dark: #8a8a96;
+      --accent: #a0a0b0;
+      --success: #34c759;
+      --warning: #ff9f0a;
+      --danger: #ff453a;
+      --blue: #0a84ff;
+      --purple: #bf5af2;
+      --radius: 20px;
+      --radius-sm: 14px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.45);
+      --shadow-soft: 0 4px 16px rgba(0,0,0,0.3);
+      --glass: rgba(28,28,34,0.75);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+      background: var(--bg);
+      color: var(--silver-light);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.4;
+    }
+
+    /* ===== APP SHELL ===== */
+    .app {
+      max-width: 480px;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      background: linear-gradient(180deg, #0d0d10 0%, #0a0a0c 100%);
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 20px 12px;
+      background: rgba(10,10,12,0.82);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(192,192,200,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(145deg, #2a2a32, #1a1a20);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.08);
+      font-size: 20px;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #e8e8f0, #a0a0b0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid rgba(192,192,200,0.1);
+      color: var(--silver);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .icon-btn:active {
+      transform: scale(0.92);
+      background: var(--bg-card-hover);
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      background: rgba(14,14,18,0.88);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border-top: 1px solid rgba(192,192,200,0.1);
+      padding: 10px 12px 28px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 200;
+      box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      color: var(--silver-dark);
+      font-size: 11px;
+      font-weight: 500;
+      min-wi
+... 
